@@ -2,6 +2,10 @@
 
 ## v0.9.0
 - [task] added support for VS Code task contribution points: `taskDefinitions`, `problemMatchers`, and `problemPatterns`
+- [task] added multi-root support to "configure task" and customizing tasks in `tasks.json`
+- [task] changed the way that "configure task" copies the entire task config, to only writting properties that define the detected task plus `problemMatcher`, into `tasks.json`
+- [task] fixed the problem where a detected task can be customized more than once
+- [task] displayed the customized tasks as "configured tasks" in the task quick open
 - [plugin] added support of debug activation events [#5645](https://github.com/theia-ide/theia/pull/5645)
 - [security] Bump lodash.mergewith from 4.6.1 to 4.6.2
 - [plugin] Fixed `Converting circular structure to JSON` Error [#5661](https://github.com/theia-ide/theia/pull/5661)
@@ -17,6 +21,7 @@ Breaking changes:
   - Theia plugins should declare the `"activationEvents": ["*"]` entry in the root of the `package.json`. Otherwise, they won't start at app startup. See [#5743](https://github.com/theia-ide/theia/issues/5743) for more details.
 - [plugin] added support of `workspaceContains` activation events [#5649](https://github.com/theia-ide/theia/pull/5649)
 - [plugin] activate dependencies before activating a plugin [#5661](https://github.com/theia-ide/theia/pull/5661)
+- [task] `TaskService.getConfiguredTasks()` returns `Promise<TaskConfiguration[]>` instead of `TaskConfiguration[]`.
 
 ## v0.8.0
 
