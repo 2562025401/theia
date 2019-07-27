@@ -1,5 +1,18 @@
 # Change Log
 
+## v0.10.0
+
+- [task] added support for VS Code task contribution points: `taskDefinitions`, `problemMatchers`, and `problemPatterns`
+- [task] added multi-root support to "configure task" and customizing tasks in `tasks.json`
+- [task] changed the way that "configure task" copies the entire task config, to only writting properties that define the detected task plus `problemMatcher`, into `tasks.json`
+- [task] fixed the problem where a detected task can be customized more than once
+- [task] displayed the customized tasks as "configured tasks" in the task quick open
+- [task] allowed users to override any task properties other than the ones used in the task definition
+
+Breaking changes:
+
+- [task] `TaskService.getConfiguredTasks()` returns `Promise<TaskConfiguration[]>` instead of `TaskConfiguration[]`.
+
 ## v0.9.0
 - [core] added `theia-widget-noInfo` css class to be used by widgets when displaying no information messages [#5717](https://github.com/theia-ide/theia/pull/5717)
 - [core] added additional options to the tree search input [#5566](https://github.com/theia-ide/theia/pull/5566)
